@@ -55,7 +55,7 @@ body {
   margin-left: 12%;
   position: relative;
   top: 500px;
-  font-size: large;
+  font-size: var(--medium-class-font-size);
 }
 
 /* Categry cards */
@@ -120,8 +120,8 @@ div.allItemsCards {
 .itemCard {
   font-size: x-large;
   font-weight: bolder;
-  width: 250px;
-  height: 400px;
+  width: 800px;
+  height: auto;
   padding: 0%;
   cursor: pointer;
 }
@@ -139,7 +139,7 @@ img.itemImage {
   flex-direction: column;
   justify-content: center;
   align-items: self-start;
-  font-size: medium;
+  font-size: var(--small-class-font-size);
   font-weight: 500;
   width: 200px;
 }
@@ -156,7 +156,7 @@ img.itemImage {
   margin-bottom: 1%;
 }
 
-.pInfoSmall {
+.pInfoSmall { /* Price per item */
   margin: 0;
   margin-bottom: 1%;
   font-size: small;
@@ -300,6 +300,7 @@ img.itemDetailImage {
   padding-left: 5%;
   padding-top: 5%;
 }
+
 
 .strikethrough {
   text-decoration: line-through;
@@ -503,8 +504,6 @@ img.itemDetailImage {
 
 :root {
   --section-title-font-size: 50px; /* Default font size */
-  --medium-class-font-size: 30px; /* Default font size */
-  --small-class-font-size: medium; /* Default font size */
 }
 
 .banner {
