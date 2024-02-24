@@ -1,6 +1,7 @@
 $(document).ready(function () {
-
     eventHandlers();
+    play_audio();
+    findMyState();
     adjustBrightness();
 });
 
@@ -92,13 +93,13 @@ function eventHandlers() {
         }, 50);
     });
 
-    $('.home-button').on("click", function () {
+    $('.home-button').on("click", function () {        
         $('#produceSection').hide();
         $('#dairySection').hide();
         $('#bakerySection').hide();
         $('#catSection').show();
         scroll(0, 0);
-        scroll("smooth");
+        scroll("smooth");  
     });
 
     $('.title').on("click", function() {
@@ -134,4 +135,41 @@ function decrement(button) {
         countSpan.setAttribute('data-count', count);
         countSpan.innerText = count;
     }
+}
+
+function play_audio() {
+    var button = document.getElementById("button");
+    button.addEventListener("click", () => {
+        $(".my_audio").trigger('play');
+    });
+}
+
+const findMyState=()=>{
+    const status = document.querySelector('.status');
+
+    const success = (position) =>{
+        console.log(position);
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log(latitude + ", "+longitude);
+
+        const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longtitude}&localityLanguage=en'
+        
+        fetch(geoApiUrl)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            status.textContent = "Stores near: " + data.locality
+        })
+    }
+
+    const error = () =>{
+        status.textContent = "WE STILL KNOW WHERE YOU AT";
+    }
+
+    var button = document.getElementById("button");
+    button.addEventListener("click", () => {
+        navigator.geolocation.getCurrentPosition(success, error);
+    });
+
 }
