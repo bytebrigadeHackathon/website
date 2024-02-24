@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     eventHandlers();
+    adjustBrightness();
 });
 
 function eventHandlers() {
@@ -99,4 +100,9 @@ function eventHandlers() {
         scroll(0, 0);
         scroll("smooth");  
     });
+
+    function adjustBrightness(value) {
+        const brightnessValue = value/10;
+        document.querySelector('.bodyClass').style.filter = `brightness(${brightnessValue})`;
+    }
 }
