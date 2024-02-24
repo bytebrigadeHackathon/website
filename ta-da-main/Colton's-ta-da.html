@@ -587,6 +587,7 @@
         <ion-icon name="cart"></ion-icon>
     </button>
     <!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -614,18 +615,19 @@
                 color: #fff;
                 border: none;
                 border-radius: 5px;
+                top: 15px;
             }
             #suggestions {
                 list-style: none;
                 padding: 0;
                 margin: 0;
                 position: absolute;
-                width: 100%;
+                width: 600px; /* Match the input width */
                 background-color: #fff;
                 border: 1px solid #ccc;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 display: none;
-                top: 40px; /* Adjust this value as needed */
+                top: 100px; /* Adjust this value as needed */
             }
             #suggestions li {
                 padding: 10px;
@@ -635,21 +637,24 @@
         </style>
     </head>
     <body>
-        <div class="wrapper">
+        <div id="searchbar" class="wrapper">
             <!-- Search bar -->
-            <input type="text" class="input_search" id="search-input" placeholder="What are you looking for?">
-            <button class="search_btn" id="search-button">Search</button>
+            <div class="search_box">
+                <input type="text" class="input_search" id="search-input" placeholder="What are you looking for today?">
+                <button class="search_btn" id="search-button">Search</button>
+            </div>
             <!-- Suggestions list -->
             <ul id="suggestions"></ul>
         </div>
-    
+        <!-- Logo -->
+        <!-- Add your logo here -->
         <script>
             const searchInput = document.getElementById('search-input');
             const searchButton = document.getElementById('search-button');
             const suggestionsList = document.getElementById('suggestions');
     
             // Sample data for word suggestions
-            const words = ['apple', 'assorted Cupcakes', 'Baked Goods', 'Cheese', 'Milk', 'Large X  Eggs', 'Organic Brocoli', 'Organic  Mushrooms', 'Plum Roma Tomatoes', 'Pie' ,'Rhubard  Strawberry ', 'Watermelon  seedless','squash'];
+            const words = ['apple', 'assorted Cupcakes', 'Baked Goods', 'Cheese', 'Milk', 'Large X  Eggs', 'Organic Brocoli', 'Organic  Mushrooms', 'Plum Roma Tomatoes', 'Pie', 'Rhubard  Strawberry', 'Watermelon  seedless', 'squash'];
     
             // Event listener for input changes
             searchInput.addEventListener('input', () => {
@@ -680,10 +685,13 @@
                 console.log(`Searching for: ${query}`);
                 window.location.href = `=${encodeURIComponent(query)}`;
 
-            });
+
+           });
         </script>
     </body>
     </html>
+    
+
     
 
     <!-- banner -->

@@ -1,95 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Search Bar with Suggestions</title>
-    <style>
-        /* Basic styling for the search bar */
-        .wrapper {
-            position: absolute;
-        }
-        .input_search {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .search_btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 10px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-        }
-        #suggestions {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: none;
-            top: 40px; /* Adjust this value as needed */
-        }
-        #suggestions li {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <!-- Search bar -->
-        <input type="text" class="input_search" id="search-input" placeholder="What are you looking for?">
-        <button class="search_btn" id="search-button">Search</button>
-        <!-- Suggestions list -->
-        <ul id="suggestions"></ul>
-    </div>
-
-    <script>
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
-        const suggestionsList = document.getElementById('suggestions');
-
-        // Sample data for word suggestions
-        const words = ['apple', 'assorted Cupcakes', 'Baked Goods', 'Cheese', 'Milk', 'Large X  Eggs', 'Organic Brocoli', 'Organic  Mushrooms', 'Plum Roma Tomatoes', 'Pie' ,'Rhubard  Strawberry ', 'Watermelon  seedless','squash'];
-
-        // Event listener for input changes
-        searchInput.addEventListener('input', () => {
-            const inputValue = searchInput.value.toLowerCase();
-            const filteredWords = words.filter(word => word.toLowerCase().startsWith(inputValue));
-            displaySuggestions(filteredWords);
-        });
-
-        // Display suggestions in the list
-        function displaySuggestions(suggestions) {
-            suggestionsList.innerHTML = '';
-            suggestions.forEach(suggestion => {
-                const li = document.createElement('li');
-                li.textContent = suggestion;
-                li.addEventListener('click', () => {
-                    searchInput.value = suggestion;
-                    suggestionsList.style.display = 'none';
-                });
-                suggestionsList.appendChild(li);
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Search Bar with Suggestions</title>
+        <style>
+            /* Basic styling for the search bar */
+            .wrapper {
+                position: absolute;
+            }
+            .input_search {
+                width: 300px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            .search_btn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 10px;
+                cursor: pointer;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                top: 15px;
+            }
+            #suggestions {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                width: 600px; /* Match the input width */
+                background-color: #fff;
+                border: 1px solid #ccc;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: none;
+                top: 100px; /* Adjust this value as needed */
+            }
+            #suggestions li {
+                padding: 10px;
+                border-bottom: 1px solid #eee;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="searchbar" class="wrapper">
+            <!-- Search bar -->
+            <div class="search_box">
+                <input type="text" class="input_search" id="search-input" placeholder="What are you looking for today?">
+                <button class="search_btn" id="search-button">Search</button>
+            </div>
+            <!-- Suggestions list -->
+            <ul id="suggestions"></ul>
+        </div>
+        <!-- Logo -->
+        <!-- Add your logo here -->
+        <script>
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            const suggestionsList = document.getElementById('suggestions');
+    
+            // Sample data for word suggestions
+            const words = ['apple', 'assorted Cupcakes', 'Baked Goods', 'Cheese', 'Milk', 'Large X  Eggs', 'Organic Brocoli', 'Organic  Mushrooms', 'Plum Roma Tomatoes', 'Pie', 'Rhubard  Strawberry', 'Watermelon  seedless', 'squash'];
+    
+            // Event listener for input changes
+            searchInput.addEventListener('input', () => {
+                const inputValue = searchInput.value.toLowerCase();
+                const filteredWords = words.filter(word => word.toLowerCase().startsWith(inputValue));
+                displaySuggestions(filteredWords);
             });
-            suggestionsList.style.display = 'block';
-        }
+    
+            // Display suggestions in the list
+            function displaySuggestions(suggestions) {
+                suggestionsList.innerHTML = '';
+                suggestions.forEach(suggestion => {
+                    const li = document.createElement('li');
+                    li.textContent = suggestion;
+                    li.addEventListener('click', () => {
+                        searchInput.value = suggestion;
+                        suggestionsList.style.display = 'none';
+                    });
+                    suggestionsList.appendChild(li);
+                });
+                suggestionsList.style.display = 'block';
+            }
+    
+            // Event listener for search button
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value;
+                // Implement your search functionality here
+                console.log(`Searching for: ${query}`);
+                window.location.href = `=${encodeURIComponent(query)}`;
 
-        // Event listener for search button
-        searchButton.addEventListener('click', () => {
-            const query = searchInput.value;
-            // Implement your search functionality here
-            console.log(`Searching for: ${query}`);
-            window.location.href = `=${encodeURIComponent(query)}`;
 
-        });
+           });
+        </script>
+    </body>
+    </html>
