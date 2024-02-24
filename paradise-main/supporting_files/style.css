@@ -159,7 +159,7 @@ img.itemImage {
 .pInfoSmall { /* Price per item */
   margin: 0;
   margin-bottom: 1%;
-  font-size: small;
+  font-size: var(--small-class-font-size);
 }
 
 div.qtyButtonContainers {
