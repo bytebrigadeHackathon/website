@@ -92,13 +92,13 @@ function eventHandlers() {
         }, 50);
     });
 
-    $('.home-button').on("click", function () {        
+    $('.home-button').on("click", function () {
         $('#produceSection').hide();
         $('#dairySection').hide();
         $('#bakerySection').hide();
         $('#catSection').show();
         scroll(0, 0);
-        scroll("smooth");  
+        scroll("smooth");
     });
 }
 function play_audio() {
@@ -108,11 +108,9 @@ function play_audio() {
     });
 }
 const fontSizeSlider = document.getElementById('myRange1');
-fontSizeSlider.addEventListener('input', function() {
+fontSizeSlider.addEventListener('input', function () {
     document.documentElement.style.setProperty('--section-title-font-size', this.value + '2px');
     document.documentElement.style.setProperty('--medium-class-font-size', this.value + '1px');
     document.documentElement.style.setProperty('--small-class-font-size', this.value + '0.25px');
     inputSearch.style.fontSize = Math.min(24, maxFontSize) + 'px';
-    document.documentElement.style.setProperty('--medium-class-font-size', this.value + "1px");
-    document.documentElement.style.setProperty('--small-class-font-size', this.value + "0.25px");
 });
