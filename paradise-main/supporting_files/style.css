@@ -87,6 +87,7 @@ button.catCardBtn:hover {
   background: #0bae8e;
 }
 
+
 .catCard {
   font-size: var(--medium-class-font-size);
   font-weight: bolder;
