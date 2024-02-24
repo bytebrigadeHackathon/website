@@ -502,6 +502,7 @@ img.itemDetailImage {
 
 :root {
   --section-title-font-size: 50px; /* Default font size */
+  --medium-class-font-size: 30px; /* Default font size */
 }
 
 .banner {
