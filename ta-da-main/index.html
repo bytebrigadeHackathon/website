@@ -502,11 +502,18 @@
             <br><br>
             <div class="settingView">
                 <h4>Brightness</h4>
-                <p>Drag the slider to adjust the brightness.</p>
+                <p>Drag the slider to simulate brightness adjustments.</p>
                 <div class="slideContainer">
-                    <input type="range" min="1" max="10" class="slider" id="myRange">
+                    <input type="range" min="1" max="10" class="slider" id="myRange" oninput="adjustBrightness(this.value)">
                 </div>
             </div>
+        
+            <script>
+                function adjustBrightness(value) {
+                    const brightnessValue = value / 10;
+                    document.querySelector('.search_box').style.filter = `brightness(${brightnessValue})`;
+                }
+            </script>
             <br><br>
             <div class="settingView">
                 <h4>Screen Reader</h4>
