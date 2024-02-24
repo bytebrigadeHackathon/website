@@ -587,7 +587,6 @@
         <ion-icon name="cart"></ion-icon>
     </button>
     <!DOCTYPE html>
-    <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -666,15 +665,21 @@
             // Display suggestions in the list
             function displaySuggestions(suggestions) {
                 suggestionsList.innerHTML = '';
-                suggestions.forEach(suggestion => {
+                if (suggestions.length === 0) {
                     const li = document.createElement('li');
-                    li.textContent = suggestion;
-                    li.addEventListener('click', () => {
-                        searchInput.value = suggestion;
-                        suggestionsList.style.display = 'none';
-                    });
+                    li.textContent = 'No search results found';
                     suggestionsList.appendChild(li);
-                });
+                } else {
+                    suggestions.forEach(suggestion => {
+                        const li = document.createElement('li');
+                        li.textContent = suggestion;
+                        li.addEventListener('click', () => {
+                            searchInput.value = suggestion;
+                            suggestionsList.style.display = 'none';
+                        });
+                        suggestionsList.appendChild(li);
+                    });
+                }
                 suggestionsList.style.display = 'block';
             }
     
@@ -683,13 +688,17 @@
                 const query = searchInput.value;
                 // Implement your search functionality here
                 console.log(`Searching for: ${query}`);
-                window.location.href = `=${encodeURIComponent(query)}`;
-
-
-           });
+                if (!words.includes(query.toLowerCase())) {
+                    console.log('No search results found');
+                    displaySuggestions([]);
+                } else {
+                    window.location.href = `=${encodeURIComponent(query)}`;
+                }
+            });
         </script>
     </body>
     </html>
+    
     
 
     
@@ -705,3 +714,4 @@
 </body>
 
 </html>
+
