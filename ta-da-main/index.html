@@ -53,10 +53,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn' onclick="decrement()">-</button>
-                        <span id="cartCount">0</span>
-                        <!-- <input type='text' class='quantityInput' value='0' readonly /> -->
-                        <button class='quantityButton btn' onclick="increment()">+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -82,9 +81,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -98,9 +97,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='1' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -113,10 +112,10 @@
                             <p class="pInfoSmall">0.3kg ($6.59 per kilogram)</p>
                         </div>
                     </div>
-                    <div class='qtyButtonContainers' id="watermelon">
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                    <div class='qtyButtonContainers'>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -131,9 +130,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
             </div>
@@ -157,9 +156,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='1' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -174,9 +173,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -190,9 +189,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
             </div>
@@ -217,9 +216,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -235,9 +234,9 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='2' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                        <span class="cartCount" data-count="0">0</span>
+                        <button class='quantityButton btn' onclick="increment(this)">+</button>
                     </div>
                 </div>
 
@@ -505,7 +504,8 @@
                 <h4>Brightness</h4>
                 <p>Drag the slider to adjust the brightness.</p>
                 <div class="slideContainer">
-                    <input type="range" min="5" max="20" class="slider" id="myRange" oninput="adjustBrightness(this.value)">
+                    <input type="range" min="5" max="20" class="slider" id="myRange"
+                        oninput="adjustBrightness(this.value)">
                 </div>
             </div>
             <br><br>
@@ -539,9 +539,9 @@
                     <h4 class="itemPrice">$6.59/kilogram</h4>
                 </div>
                 <div class='qtyButtonContainers'>
-                    <button class='quantityButtonCart btn'>-</button>
-                    <input type='text' class='quantityInputCart' value='1' readonly />
-                    <button class='quantityButtonCart btn'>+</button>
+                    <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                    <span class="cartCount" data-count="0">0</span>
+                    <button class='quantityButton btn' onclick="increment(this)">+</button>
                 </div>
             </div>
             <br>
@@ -551,9 +551,9 @@
                     <h4 class="itemPrice">$6.59 ea</h4>
                 </div>
                 <div class='qtyButtonContainers'>
-                    <button class='quantityButtonCart btn'>-</button>
-                    <input type='text' class='quantityInputCart' value='2' readonly />
-                    <button class='quantityButtonCart btn'>+</button>
+                    <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                    <span class="cartCount" data-count="0">0</span>
+                    <button class='quantityButton btn' onclick="increment(this)">+</button>
                 </div>
             </div>
             <br>
@@ -563,18 +563,18 @@
                     <h4 class="itemPrice">$11.99 ea</h4>
                 </div>
                 <div class='qtyButtonContainers'>
-                    <button class='quantityButtonCart btn'>-</button>
-                    <input type='text' class='quantityInputCart' value='1' readonly />
-                    <button class='quantityButtonCart btn'>+</button>
+                    <button class='quantityButton btn' onclick="decrement(this)">-</button>
+                    <span class="cartCount" data-count="0">0</span>
+                    <button class='quantityButton btn' onclick="increment(this)">+</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- <a href="index.html"> -->
-        <button class="home-button" type="button">
-            <ion-icon name="home"></ion-icon>
-        </button>
+    <button class="home-button" type="button">
+        <ion-icon name="home"></ion-icon>
+    </button>
     <!-- </a> -->
 
     <button class="cart-button" type="button">

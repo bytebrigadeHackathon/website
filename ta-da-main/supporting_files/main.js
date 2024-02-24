@@ -2,8 +2,6 @@ $(document).ready(function () {
 
     eventHandlers();
     adjustBrightness();
-    increment();
-    decrement();
 });
 
 function eventHandlers() {
@@ -103,21 +101,37 @@ function eventHandlers() {
         scroll("smooth");
     });
 
-    function adjustBrightness(value) {
-        const brightnessValue = value / 10;
-        document.querySelector('.bodyClass').style.filter = `brightness(${brightnessValue})`;
-    }
+    $('.title').on("click", function() {
+        $('#produceSection').hide();
+        $('#dairySection').hide();
+        $('#bakerySection').hide();
+        $('#catSection').show();
+        scroll(0, 0);
+        scroll("smooth");
+    });
+}
+// adjusts the brightness of the screen
+function adjustBrightness(value) {
+    const brightnessValue = value / 10;
+    document.querySelector('.bodyClass').style.filter = `brightness(${brightnessValue})`;
+}
 
-    count = 0;
-    function increment() {
-        count++;
-        document.getElementById('cartCount').innerText = count;
-    }
+// increments and decrements the quantity value
+function increment(button) {
+    var container = button.parentNode;
+    var countSpan = container.getElementsByClassName('cartCount')[0];
+    var count = parseInt(countSpan.getAttribute('data-count')) + 1;
+    countSpan.setAttribute('data-count', count);
+    countSpan.innerText = count;
+}
 
-    function decrement() {
-        if (count > 0) {
-            count--;
-            document.getElementById('cartCount').innerText = count;
-        }
+function decrement(button) {
+    var container = button.parentNode;
+    var countSpan = container.getElementsByClassName('cartCount')[0];
+    var count = parseInt(countSpan.getAttribute('data-count'));
+    if (count > 0) {
+        count -= 1;
+        countSpan.setAttribute('data-count', count);
+        countSpan.innerText = count;
     }
 }
