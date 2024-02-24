@@ -1,8 +1,0 @@
-1. Keeping track of orders based on ip
-2. Keeping track of them idling. Give alerts if they idle for too long, and call the ambulance
-3. Make cursor bigger
-4. Chat bot
-5. Make the texts bigger
-6. Keeping track of the address so they don't have to type their addresses
-7. Visual to audio
-8. Help with dementia
