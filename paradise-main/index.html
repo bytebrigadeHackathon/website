@@ -554,9 +554,71 @@
             </div>
         </div>
 
-        <button class="help-button" type="button">
-            <ion-icon name="help-circle"></ion-icon>
-        </button>
+                <!-- begin -->
+                <button class="help-button" type="button" id="helpButton">
+                    <ion-icon name="help-circle"></ion-icon>
+                </button>
+                
+                <div class="modal" id="myModal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <div style="text-align: center;">
+                            <p> 1. Browse through different categories of items below
+                                <br> <!-- line break -->
+                                2. Click the three lined button on the left to access your cart
+                                <br> <!-- line break -->
+                                3. 
+                            </p>
+                        </div>
+                        <!-- <p>Browse through items below</p> -->
+                    </div>
+                </div>
+                
+                <style>
+                    /* Style for the modal */
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                
+                    .modal-content {
+                        position: absolute;
+                        top: 43%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    }
+                
+                    .close {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        font-size: 60px;
+                        cursor: pointer;
+                    }
+                </style>
+                
+                <script>
+                    var helpButton = document.getElementById('helpButton');
+                    var modal = document.getElementById('myModal');
+                
+                    helpButton.addEventListener('click', function() {
+                        modal.style.display = 'block';
+                    });
+                
+                    function closeModal() {
+                        modal.style.display = 'none';
+                    }
+                </script>
+                <!-- end -->
 
         <!-- Cart view -->
         <button id="overlay-button" class="menu-button">
