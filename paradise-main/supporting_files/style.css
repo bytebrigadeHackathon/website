@@ -48,7 +48,7 @@ body {
 }
 
 .card:hover {
-  background: #d8d1ce;
+  background: #d6d627;
 }
 
 .breadbrumb {
@@ -772,5 +772,46 @@ img.logo {
   height: auto; /* Maintain aspect ratio */
   position: absolute;
   z-index: 2;
+  cursor: pointer;
+}
+
+/* Basic styling for the search bar */
+.wrapper {
+  position: absolute;
+}
+.input_search {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.search_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  top: 15px;
+}
+#suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 600px; /* Match the input width */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  top: 100px; /* Adjust this value as needed */
+}
+#suggestions li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
   cursor: pointer;
 }
