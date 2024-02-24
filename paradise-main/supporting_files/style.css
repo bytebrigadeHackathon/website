@@ -743,3 +743,9 @@ body .itemName {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.title {
+  position: relative;
+  scale: 0.8  ;
+  left:-50px;
+}
