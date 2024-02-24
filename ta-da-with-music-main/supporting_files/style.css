@@ -148,6 +148,7 @@ img.itemImage {
   margin: 0;
   margin-bottom: 3%;
   margin-top: 3%;
+  font-size: var(--small-class-font-size); 
 }
 
 .pInfo {
@@ -503,6 +504,7 @@ img.itemDetailImage {
 :root {
   --section-title-font-size: 50px; /* Default font size */
   --medium-class-font-size: 30px; /* Default font size */
+  --small-class-font-size: medium; /* Default font size */
 }
 
 .banner {
