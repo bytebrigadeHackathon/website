@@ -1,6 +1,6 @@
 $(document).ready(function () {
-
     eventHandlers();
+    play_audio();
 });
 
 function eventHandlers() {
@@ -98,5 +98,11 @@ function eventHandlers() {
         $('#catSection').show();
         scroll(0, 0);
         scroll("smooth");  
+    });
+}
+function play_audio() {
+    var button = document.getElementById("button");
+    button.addEventListener("click", () => {
+        $(".my_audio").trigger('play');
     });
 }
