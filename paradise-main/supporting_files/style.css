@@ -771,6 +771,6 @@ img.logo {
   width: 200px; /* Set desired width */
   height: auto; /* Maintain aspect ratio */
   position: absolute;
-  z-index: 900;
+  z-index: 2;
   cursor: pointer;
 }
