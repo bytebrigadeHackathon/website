@@ -743,3 +743,10 @@ body .itemName {
   text-decoration: underline;
   cursor: pointer;
 }
+
+.title {
+  position: static;
+  scale: 0.9;
+  left:-50px;
+  /* font-size: 90%; */
+}
