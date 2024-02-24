@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./supporting_files/style.css">
 </head>
 
-<body>
+<body class="bodyClass">
     <h1 class="title"><strong>Ta-Da!</strong></h1>
 
     <div id="allCards">
@@ -504,9 +504,16 @@
                 <h4>Brightness</h4>
                 <p>Drag the slider to adjust the brightness.</p>
                 <div class="slideContainer">
-                    <input type="range" min="1" max="10" class="slider" id="myRange">
+                    <input type="range" min="5" max="20" class="slider" id="myRange" oninput="adjustBrightness(this.value)">
                 </div>
             </div>
+
+            <script>
+                function adjustBrightness(value) {
+                    const brightnessValue = value/10;
+                    document.querySelector('.bodyClass').style.filter = `brightness(${brightnessValue})`;
+                }
+            </script>
             <br><br>
             <div class="settingView">
                 <h4>Screen Reader</h4>
