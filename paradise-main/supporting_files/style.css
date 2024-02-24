@@ -758,3 +758,19 @@ body .itemName {
   scale: 0.8  ;
   left:-50px;
 }
+
+/* logo CSS */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height of the container to the full viewport height */
+ 
+}
+img.logo {
+  width: 200px; /* Set desired width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  z-index: 900;
+  cursor: pointer;
+}

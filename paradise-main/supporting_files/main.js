@@ -102,7 +102,7 @@ function eventHandlers() {
         scroll("smooth");  
     });
 
-    $('.title').on("click", function() {
+    $('.logo').on("click", function() {
         $('#produceSection').hide();
         $('#dairySection').hide();
         $('#bakerySection').hide();
