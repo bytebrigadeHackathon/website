@@ -110,4 +110,6 @@ function play_audio() {
 const fontSizeSlider = document.getElementById('myRange1');
 fontSizeSlider.addEventListener('input', function() {
     document.documentElement.style.setProperty('--section-title-font-size', this.value + '2px');
+    document.documentElement.style.setProperty('--medium-class-font-size', this.value + 'px');
+    document.documentElement.style.setProperty('--small-class-font-size', this.value + '0.25px');
 });

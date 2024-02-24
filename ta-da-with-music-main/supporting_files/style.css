@@ -88,9 +88,9 @@ button.catCardBtn:hover {
 }
 
 .catCard {
-  font-size: x-large;
+  font-size: var(--medium-class-font-size);
   font-weight: bolder;
-  width: 200px;
+  width: auto;
 }
 
 img.catImage {
