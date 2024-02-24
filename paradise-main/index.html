@@ -6,11 +6,26 @@
     <link rel="stylesheet" href="./supporting_files/style.css">
     <link rel="stylesheet" href="./supporting_files/payWall.css">
     <link rel="stylesheet" href="./supporting_files/location.css">
+
+    <style>
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Set the height of the container to the full viewport height */
+        }
+        img.logo {
+            width: 200px; /* Set desired width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
 </head>
 
 <body class="bodyClass"> 
+    <img class = "logo" src="./supporting_files/images/logo.png">
     <h1 class="title" id="myHeading" onclick="headingButton"><strong>PARADISE</strong></h1>
 
+    
     <div class="container">
         <h1 class="status"></h1>
     </div>
@@ -530,7 +545,7 @@
                     <h4>Text Size</h4>
                     <p>Drag the slider to adjust text size.</p>
                     <div class="slideContainer">
-                        <input type="range" min="1" max="5" class="slider" id="myRange">
+                        <input type="range" min="5" max="17" value = "5" class="slider" id="myRange1" >
                     </div>
                 </div>
                 <br><br>
