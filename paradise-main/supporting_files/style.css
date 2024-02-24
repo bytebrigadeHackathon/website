@@ -22,11 +22,14 @@ body {
 
 .sectionTitle {
   text-align: center;
-  font-size: xxx-large;
+  font-size: var(--section-title-font-size);
   position: relative;
   top: 500px;
 }
 
+.increaseFontSize {
+  font-size: 5px;
+}
 .card {
   background: #f4ece9;
   border-style: solid;
@@ -45,14 +48,14 @@ body {
 }
 
 .card:hover {
-  background: #d8d1ce;
+  background: #d6d627;
 }
 
 .breadbrumb {
   margin-left: 12%;
   position: relative;
   top: 500px;
-  font-size: large;
+  font-size: var(--medium-class-font-size);
 }
 
 /* Categry cards */
@@ -84,10 +87,11 @@ button.catCardBtn:hover {
   background: #0bae8e;
 }
 
+
 .catCard {
-  font-size: x-large;
+  font-size: var(--medium-class-font-size);
   font-weight: bolder;
-  width: 200px;
+  width: auto;
 }
 
 img.catImage {
@@ -117,8 +121,8 @@ div.allItemsCards {
 .itemCard {
   font-size: x-large;
   font-weight: bolder;
-  width: 250px;
-  height: 400px;
+  width: 800px;
+  height: auto;
   padding: 0%;
   cursor: pointer;
 }
@@ -136,7 +140,7 @@ img.itemImage {
   flex-direction: column;
   justify-content: center;
   align-items: self-start;
-  font-size: medium;
+  font-size: var(--small-class-font-size);
   font-weight: 500;
   width: 200px;
 }
@@ -145,6 +149,7 @@ img.itemImage {
   margin: 0;
   margin-bottom: 3%;
   margin-top: 3%;
+  font-size: var(--small-class-font-size); 
 }
 
 .pInfo {
@@ -152,10 +157,10 @@ img.itemImage {
   margin-bottom: 1%;
 }
 
-.pInfoSmall {
+.pInfoSmall { /* Price per item */
   margin: 0;
   margin-bottom: 1%;
-  font-size: small;
+  font-size: var(--small-class-font-size);
 }
 
 div.qtyButtonContainers {
@@ -166,13 +171,14 @@ div.qtyButtonContainers {
   justify-content: center;
   align-items: center;
   margin-top: 5%;
+  font-size: var(--small-class-font-size);
 }
 
 div.qtyButtonContainers button.quantityButton {
-  width: 50px;
-  height: 50px;
+  width: calc(var(--small-class-font-size) * 4);
+  height: calc(var(--small-class-font-size) * 2);
   text-align: center;
-  font-size: xx-large;
+  font-size: var(--small-class-font-size);
   border-radius: 5%;
   cursor: pointer;
 }
@@ -296,6 +302,7 @@ img.itemDetailImage {
   padding-left: 5%;
   padding-top: 5%;
 }
+
 
 .strikethrough {
   text-decoration: line-through;
@@ -490,12 +497,17 @@ img.itemDetailImage {
   position: absolute;
   top: 5px;
   left: 8px;
-  font-size: 70px;
+  font-size: var(--section-title-font-size);
   color: #2b2828;
   margin: 0%;
   padding: 0%;
   margin-left: 3%;
   cursor: pointer;
+}
+
+:root {
+  --section-title-font-size: 50px; /* Default font size */
+  --small-class-font-size: 40px;
 }
 
 .banner {
@@ -745,8 +757,64 @@ body .itemName {
 }
 
 .title {
-  position: static;
-  scale: 0.9;
+  position: relative;
+  scale: 0.8  ;
   left:-50px;
-  /* font-size: 90%; */
+}
+
+/* logo CSS */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height of the container to the full viewport height */
+ 
+}
+img.logo {
+  width: 200px; /* Set desired width */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Basic styling for the search bar */
+.wrapper {
+  position: absolute;
+}
+.input_search {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.search_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  top: 15px;
+}
+#suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 600px; /* Match the input width */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  top: 100px; /* Adjust this value as needed */
+}
+#suggestions li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
 }
