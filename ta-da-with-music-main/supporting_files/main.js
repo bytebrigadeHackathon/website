@@ -1,6 +1,7 @@
 $(document).ready(function () {
     eventHandlers();
     play_audio();
+
 });
 
 function eventHandlers() {
@@ -106,3 +107,7 @@ function play_audio() {
         $(".my_audio").trigger('play');
     });
 }
+const fontSizeSlider = document.getElementById('myRange1');
+fontSizeSlider.addEventListener('input', function() {
+    document.documentElement.style.setProperty('--section-title-font-size', this.value + '2px');
+});

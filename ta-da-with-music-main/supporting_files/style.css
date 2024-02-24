@@ -22,11 +22,14 @@ body {
 
 .sectionTitle {
   text-align: center;
-  font-size: xxx-large;
+  font-size: var(--section-title-font-size);
   position: relative;
   top: 500px;
 }
 
+.increaseFontSize {
+  font-size: 5px;
+}
 .card {
   background: #f4ece9;
   border-style: solid;
@@ -490,11 +493,15 @@ img.itemDetailImage {
   position: absolute;
   top: 5px;
   left: 8px;
-  font-size: 70px;
+  font-size: var(--section-title-font-size);
   color: #2b2828;
   margin: 0%;
   padding: 0%;
   margin-left: 3%;
+}
+
+:root {
+  --section-title-font-size: 50px; /* Default font size */
 }
 
 .banner {
