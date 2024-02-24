@@ -14,8 +14,39 @@
 
     position: absolute;
     z-index: 1000;
+    font-size: 70px;
+
+    outline:0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+
+    background-color: lightblue;
+    
     
 }
+
+h4{
+    color: #7c795d; font-family: 'Trocchi', serif; font-size: 90px; font-weight: normal; line-height: 70px; margin: 90px 0px 0px; 
+}
+
+
+p{
+    font-family: 'Trocchi';
+}
+
+.but{
+    border: 2px solid white;
+    border-radius: 8px;
+    margin: 0px 0 70px;
+    font-size: 70px;
+    transition: background-color 1s;
+    color: white;
+
+}
+
+.but:hover {
+    background-color: #004369;
+  }
 
 .popup_background{
     top: 0%;
