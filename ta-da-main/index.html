@@ -53,9 +53,10 @@
                         </div>
                     </div>
                     <div class='qtyButtonContainers'>
-                        <button class='quantityButton btn'>-</button>
-                        <input type='text' class='quantityInput' value='0' readonly />
-                        <button class='quantityButton btn'>+</button>
+                        <button class='quantityButton btn' onclick="decrement()">-</button>
+                        <span id="cartCount">0</span>
+                        <!-- <input type='text' class='quantityInput' value='0' readonly /> -->
+                        <button class='quantityButton btn' onclick="increment()">+</button>
                     </div>
                 </div>
 
@@ -507,13 +508,6 @@
                     <input type="range" min="5" max="20" class="slider" id="myRange" oninput="adjustBrightness(this.value)">
                 </div>
             </div>
-
-            <!-- <script>
-                function adjustBrightness(value) {
-                    const brightnessValue = value/10;
-                    document.querySelector('.bodyClass').style.filter = `brightness(${brightnessValue})`;
-                }
-            </script> -->
             <br><br>
             <div class="settingView">
                 <h4>Screen Reader</h4>

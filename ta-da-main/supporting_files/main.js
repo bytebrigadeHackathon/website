@@ -2,6 +2,8 @@ $(document).ready(function () {
 
     eventHandlers();
     adjustBrightness();
+    increment();
+    decrement();
 });
 
 function eventHandlers() {
@@ -92,17 +94,30 @@ function eventHandlers() {
         }, 50);
     });
 
-    $('.home-button').on("click", function () {        
+    $('.home-button').on("click", function () {
         $('#produceSection').hide();
         $('#dairySection').hide();
         $('#bakerySection').hide();
         $('#catSection').show();
         scroll(0, 0);
-        scroll("smooth");  
+        scroll("smooth");
     });
 
     function adjustBrightness(value) {
-        const brightnessValue = value/10;
+        const brightnessValue = value / 10;
         document.querySelector('.bodyClass').style.filter = `brightness(${brightnessValue})`;
+    }
+
+    count = 0;
+    function increment() {
+        count++;
+        document.getElementById('cartCount').innerText = count;
+    }
+
+    function decrement() {
+        if (count > 0) {
+            count--;
+            document.getElementById('cartCount').innerText = count;
+        }
     }
 }
